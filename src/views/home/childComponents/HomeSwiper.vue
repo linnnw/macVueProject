@@ -1,0 +1,29 @@
+<template>
+    <wc-swiper class="heigh">
+        <wc-slide v-for="(item, k) in banner" :key="k">
+            <a :href="item.link">
+                <img :src="item.image" alt="">
+            </a>
+        </wc-slide>
+    </wc-swiper>
+</template>
+
+<script>
+    export default {
+        name: "HomeSwiper",
+        props:{
+            banner: {
+                type: Array,
+                default: () => []
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .heigh img {
+        height: 20%;
+        width: 100%;
+
+    }
+</style>

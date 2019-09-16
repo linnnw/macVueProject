@@ -38,12 +38,13 @@
 
     #HomeNav ul {
         display: flex;
-        margin-top: 13px;
+        height: 44px;
     }
     #HomeNav ul li {
         flex: 1;
         text-align: center;
         height: 30px;
+        padding: 10px;
 
     }
     .active span {

@@ -14,6 +14,7 @@
 
 <style scoped>
     .nav-bar {
+        background-color: #fff;
         height: 44px;
         line-height: 44px;
         text-align: center;
@@ -23,7 +24,7 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 99;
+        z-index: 2;
     }
     .left,
     .right {

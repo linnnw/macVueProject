@@ -4,7 +4,7 @@ import router from './router'
 
 import wcSwiper from './components/common/wc-swiper'    /*轮播*/
 Vue.use(wcSwiper);
-
+Vue.prototype.$bus = new Vue()  /*定义全局变量*/
 
 Vue.config.productionTip = false
 

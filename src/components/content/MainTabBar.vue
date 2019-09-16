@@ -1,8 +1,6 @@
 <template>
     <div id="MainTabBar">
-        <Navbar class="nb-color">
-            <div slot="center">购物街</div>
-        </Navbar>
+
 
         <TarBar>
             <TarBarItem path="/home" color="#f10">    <!--要跳转的路径赋值给path-->
@@ -33,20 +31,17 @@
     import TarBar from '@components/common/tabbar/TarBar'
     import TarBarItem from '@components/common/tabbar/TarBarItem'
 
-    import Navbar from '@components/common/navbar/Navbar'
+
 
     export default {
         name: "MainTabBar",
         components: {
             TarBar,
-            TarBarItem,
-            Navbar
+            TarBarItem
         }
     }
 </script>
 
 <style scoped>
-    .nb-color {
-        background-color: #f10;
-    }
+
 </style>

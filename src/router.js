@@ -5,7 +5,7 @@ const Home = () => import('@views/home/Home.vue')
 const Class = () => import('@views/class/Class')
 const Cart = () => import('@views/cart/Cart')
 const User = () => import('@views/user/User')
-
+const Detail = () => import('@views/detail/Detail')
 
 Vue.use(Router)
 
@@ -35,6 +35,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: User
+    },
+    {
+      path: '/detail/:iid',
+      name: 'detail',
+      component: Detail
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
     <div id="home">
-        <Scroll class="scroll"  ref="scroll" @bTop="bToTop" :probeType="3">    <!--滑动屏幕插件-->
+        <Scroll class="scroll"  ref="scroll" @bTop="bToTop" :probeType="3" @pulling="pulling" :pullUpLoad="true">    <!--滑动屏幕插件-->
             <HomeSwiper :banner="bannerList" v-if="bannerList.length"></HomeSwiper>     <!--轮播v-if防止数据还没获取到子组件就创建完成了-->
             <HomeRecommend :recommend="recommendList" v-if="recommendList.length"></HomeRecommend>
             <HomePopular></HomePopular>
@@ -55,13 +55,7 @@
             BackTop
         },
         created() {
-            getHomeMultidata().then(res => {
-                this.bannerList = res.data.data.banner.list      /*轮播图数据*/
-                this.banner = res.data.data.banner      /*banner数据*/
-
-                this.recommendList = res.data.data.recommend.list
-                this.recommend = res.data.data.recommend
-            });
+            this.getHomeMultidata()
             this.getHomeData('pop');
             this.getHomeData('new');
             this.getHomeData('sell');
@@ -85,8 +79,12 @@
                 this.$refs.scroll.scrollBackTop(0, 0);  /*回到顶部*/
             },
 
-            bToTop(option){
+            bToTop(option){     /*滑动到2000像素显示回到顶部*/
                 this.flag = (-option.y) > 2000;
+            },
+
+            pulling(){
+                this.getHomeData(this.goodsData);
             },
 
 
@@ -95,7 +93,13 @@
 
             /*以下网络请求方法*/
             getHomeMultidata(){
+                getHomeMultidata().then(res => {
+                    this.bannerList = res.data.data.banner.list      /*轮播图数据*/
+                    this.banner = res.data.data.banner      /*banner数据*/
 
+                    this.recommendList = res.data.data.recommend.list
+                    this.recommend = res.data.data.recommend
+                });
             },
             getHomeData(type){
                 let page = this.goods[type].page += 1

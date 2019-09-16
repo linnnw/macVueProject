@@ -27,7 +27,6 @@
         },
         methods: {
             currentClick(k){
-                console.log('sss');
                 this.currentIndex = k
                 this.$emit('currentIndex',k)    /*把k传给父组件*/
             }

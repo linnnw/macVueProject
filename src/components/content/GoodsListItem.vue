@@ -40,7 +40,7 @@
 #GoodsListItem p {
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis;    /*多出的文本省略号表示*/
 }
 
 #GoodsListItem img{

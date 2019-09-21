@@ -26,7 +26,7 @@
 #goodsList {
     margin-top: 15px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*规定灵活的项目在必要的时候拆行或拆列。*/
     width: 100%;
     justify-content: space-around;  /*均等分*/
 }
